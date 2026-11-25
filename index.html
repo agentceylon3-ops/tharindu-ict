@@ -1,0 +1,3834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AOS CSS Link -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Tharindu | ICT</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font (Sinhala and English) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+
+/* Hero Section (Full Screen) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* PC වලට */
+  height: 100dvh; /* Mobile screen එකට හරියටම ෆිට් වෙන්න */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+}
+
+/* Background Photo Slider Container */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Slides Base Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 16s infinite; /* 4 Photos x 4 Seconds = 16s cycle */
+}
+
+/* ඡායාරූප 4 හි Image Links (මෙතනට ඔයාගේ Photo Links දාන්න) */
+.slide-1 {
+  background-image: url('t1.jpg');
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  background-image: url('t2.jpg');
+  animation-delay: 4s;
+}
+
+.slide-3 {
+  background-image: url('t3.jpg');
+  animation-delay: 8s;
+}
+
+.slide-4 {
+  background-image: url('t4.jpg');
+  animation-delay: 12s;
+}
+
+/* Photo 4 මාරු වෙන Animation Keyframes */
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  6% { opacity: 1; }   /* Fade in */
+  25% { opacity: 1; }  /* Visible for 4 seconds */
+  31% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; }
+}
+
+/* Dark Gradient Overlay for Text Visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+/* Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Brand / Logo Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Main Big Title */
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.orange-text {
+  color: #ff7300; /* Screenshot එකේ තියෙන Orange Color එක */
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-weight: 400;
+}
+
+/* Buttons Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  color: #ffffff;
+  border: 2px solid #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e06500;
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+}
+
+/* PC Design Adjustment */
+@media (min-width: 992px) {
+  .btn-group {
+    flex-direction: row; /* PC එකේදී Button දෙක පසෙකින් තැබීමට */
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+    padding: 14px 32px;
+  }
+}
+
+
+/*result count*/
+/* Results Section Black & Gold Theme */
+.results-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.results-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gold Sub-tag */
+.sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* White Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Counters Grid Layout */
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Card Styling */
+.counter-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 35px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Gold Gradient Numbers */
+.counter-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #d4af37 100%);
+  
+  /* Standard & WebKit Properties */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Text Color Transparency */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Label */
+.counter-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .results-section {
+    padding: 50px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .counter-number {
+    font-size: 2.6rem;
+  }
+}
+
+
+/*result poto*/
+/* Orbit Section Background */
+.students-orbit-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.orbit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Orbit Wrapper (PC Size) */
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Gold Badge */
+.center-hub {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  z-index: 5;
+}
+
+.hub-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hub-sub {
+  font-size: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Outer Orbit Track Line & Rotation */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  animation: rotateOrbit 25s linear infinite; /* කැරකෙන වේගය (25s) වෙනස් කළ හැක */
+}
+
+/* User එක උඩට Mouse එක ගෙනිච්චම Pause වෙන්න */
+.orbit-wrapper:hover .orbit-ring,
+.orbit-wrapper:hover .student-circle img {
+  animation-play-state: paused;
+}
+
+/* Student Photo Circles */
+.student-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-top: -37.5px;
+  margin-left: -37.5px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.student-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: counterRotate 25s linear infinite; /* ඡායාරූපය කෙළින්ම තබා ගැනීමට */
+}
+
+/* Angle Positioning for 8 Items (Radius: 180px) */
+.item-1 { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(180px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(180px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(180px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(180px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(180px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(180px) rotate(-315deg); }
+
+/* Animation Keyframes */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Mobile Screen Responsiveness (Resize for Small Displays) */
+@media (max-width: 500px) {
+  .orbit-wrapper {
+    width: 290px;
+    height: 290px;
+    margin-top: 35px;
+  }
+
+  .center-hub {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hub-title {
+    font-size: 1rem;
+  }
+
+  .hub-sub {
+    font-size: 0.55rem;
+  }
+
+  .student-circle {
+    width: 55px;
+    height: 55px;
+    margin-top: -27.5px;
+    margin-left: -27.5px;
+  }
+
+  /* Mobile Radius Adjustment (Radius: 120px) */
+  .item-1 { transform: rotate(0deg) translate(120px) rotate(0deg); }
+  .item-2 { transform: rotate(45deg) translate(120px) rotate(-45deg); }
+  .item-3 { transform: rotate(90deg) translate(120px) rotate(-90deg); }
+  .item-4 { transform: rotate(135deg) translate(120px) rotate(-135deg); }
+  .item-5 { transform: rotate(180deg) translate(120px) rotate(-180deg); }
+  .item-6 { transform: rotate(225deg) translate(120px) rotate(-225deg); }
+  .item-7 { transform: rotate(270deg) translate(120px) rotate(-270deg); }
+  .item-8 { transform: rotate(315deg) translate(120px) rotate(-315deg); }
+}
+
+
+
+/*class time table*/
+/* Schedule Section Styling */
+.schedule-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-section .sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.schedule-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Grid Layout (Default PC: 3 columns) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+/* Institute Card Styling */
+.institute-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Header (Logo + Name + Location) */
+.inst-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inst-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.inst-location {
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Batch Content Box */
+.batch-content {
+  margin-top: 15px;
+}
+
+.batch-box {
+  padding: 6px 0;
+}
+
+.batch-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.batch-time {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  line-height: 1.4;
+}
+
+/* Inner Divider line separating 2027 and 2028 */
+.inner-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 10px 0;
+}
+
+/* Mobile Screen Responsiveness: Box 2 per row */
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 50px 10px;
+  }
+
+  .schedule-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile එකේදී box 2ක් පසෙකින් පෙන්වීමට */
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .institute-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .inst-header {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .inst-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inst-name {
+    font-size: 0.82rem;
+  }
+
+  .inst-location {
+    font-size: 0.7rem;
+  }
+
+  .batch-title {
+    font-size: 0.78rem;
+  }
+
+  .batch-time {
+    font-size: 0.72rem;
+  }
+
+  .inner-divider {
+    margin: 8px 0;
+  }
+}
+
+
+/*text animation*/
+/* Base Styling for Scroll Text Animations */
+.scroll-anim {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Effect 1: Fade Up */
+.scroll-anim.fade-up {
+  transform: translateY(80px);
+}
+
+/* Effect 2: Fade In Left */
+.scroll-anim.fade-in-left {
+  transform: translateX(-50px);
+}
+
+/* Effect 3: Zoom In */
+.scroll-anim.zoom-in {
+  transform: scale(0.85);
+}
+
+/* Active State (Scroll කරලා ඒ ස්ථානයට ආ පසු ක්‍රියාත්මක වේ) */
+.scroll-anim.appear {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+
+
+/*payment box*/
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Styling */
+.online-class-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Design */
+.teacher-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Teacher Image Styling */
+.teacher-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.teacher-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Buttons Alignment */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Red Button - Register */
+.btn-register {
+    background-color: #dc3545;
+}
+
+.btn-register:hover {
+    background-color: #c82333;
+}
+
+/* Green Button - Payment */
+.btn-payment {
+    background-color: #28a745;
+}
+
+.btn-payment:hover {
+    background-color: #218838;
+}
+
+/* POPUP MODAL STYLING */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: popupAnim 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #777777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
+.payment-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/*memory*/
+/* Memories Gallery Section */
+.memories-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.memories-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gallery Grid Layout (PC Setup) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 240px;
+  background: #111111;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* First Photo: Featured Large Box */
+.gallery-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 496px;
+}
+
+/* Image Hover Zoom Effect */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Overlay on Hover */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .memories-section {
+    padding: 50px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  /* Mobile එකේදී ප්‍රධාන Photo එක උඩින්ම පළල්ව පෙනෙන පරිදි */
+  .gallery-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 210px;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Touch screens සඳහා නිතරම text එක පෙනෙන පරිදි */
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+}
+
+
+
+/*rsvp*/
+/* පෝරමය සඳහා සැකසුම් (Form Section Styles) */
+.rsvp-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    box-sizing: border-box; /* පෝරමය එළියට පනින්නේ නැති වෙන්න */
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 25px 20px;
+    }
+    .rsvp-section .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #25D366; /* WhatsApp කොළ පාට */
+}
+
+.contact-box .section-title {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* සාමාන්‍ය විස්තර (Phone & Email) */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+}
+
+/* WhatsApp බොත්තම */
+.whatsapp-container {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px 20px;
+    }
+    
+    .contact-box .section-title {
+        font-size: 22px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+}
+.divider-line {
+    border-top: 1px solid #ffffff; /* සුදු පාට ඉර */
+    margin: 12px 0;                 /* උඩින් සහ යටින් ඉඩ (Gap) */
+    opacity: 0.6;                   /* ලස්සනට පෙනෙන්න පොඩි opacity එකක් (ඕන නැත්නම් මේ පේලිය අයින් කරන්න) */
+}
+
+
+
+/*profile poto*/
+/* Teacher Profile Section */
+.teacher-profile-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-profile-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Gold Gradient Border Frame */
+.teacher-img-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  padding: 6px; /* Gold Border එකේ මහත */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%); /* Gold Gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* Subtle Gold Glow */
+  flex-shrink: 0;
+}
+
+.teacher-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #111111;
+  display: block;
+}
+
+/* Details Section Styling */
+.teacher-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.teacher-details .sub-tag {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.teacher-name {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+  font-weight: 800;
+}
+
+.teacher-bio {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teacher-profile-section {
+    padding: 50px 15px;
+  }
+
+  .teacher-profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .teacher-details {
+    text-align: center;
+  }
+
+  .teacher-img-wrapper {
+    width: 250px;
+    height: 300px;
+  }
+
+  .teacher-name {
+    font-size: 1.8rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/*rejister form*/
+/* Registration Section Styling */
+.registration-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.reg-card {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.reg-title {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reg-description {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Gold Gradient Registration Button */
+.reg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+}
+
+.reg-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.reg-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 50px 15px;
+  }
+
+  .reg-card {
+    padding: 30px 18px;
+    border-radius: 16px;
+  }
+
+  .reg-title {
+    font-size: 1.4rem;
+  }
+
+  .reg-description {
+    font-size: 0.9rem;
+  }
+
+  .reg-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/*about*/
+/* Scoped Variables & Section Base */
+.ict-about-section {
+  --ict-bg-dark: #0a0b10;
+  --ict-card-bg: #131620;
+  --ict-gold: #fbbf24;
+  --ict-orange: #f97316;
+  --ict-white: #ffffff;
+  --ict-text-muted: #cbd5e1;
+  --ict-border: rgba(251, 191, 36, 0.2);
+
+  background-color: var(--ict-bg-dark);
+  color: var(--ict-white);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-about-section *,
+.ict-about-section *::before,
+.ict-about-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-about-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Image Column Styling */
+.ict-about-image-col {
+  display: flex;
+  justify-content: center;
+}
+
+.ict-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.ict-glow-backdrop {
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, var(--ict-gold), var(--ict-orange), transparent 70%);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+.ict-teacher-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  background-color: var(--ict-card-bg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.ict-floating-badge {
+  position: absolute;
+  bottom: -18px;
+  right: -15px;
+  background: rgba(19, 22, 32, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ict-border);
+  padding: 12px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.ict-floating-badge i {
+  font-size: 24px;
+  color: var(--ict-orange);
+  background: rgba(249, 115, 22, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ict-badge-title {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ict-gold);
+}
+
+.ict-badge-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--ict-text-muted);
+}
+
+/* Content Column Styling */
+.ict-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid var(--ict-border);
+  color: var(--ict-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+.ict-tag-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--ict-orange);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ict-orange);
+}
+
+.ict-about-heading {
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 800;
+  margin: 0 0 18px 0;
+  color: var(--ict-white);
+}
+
+.ict-about-heading span {
+  background: linear-gradient(90deg, var(--ict-gold), var(--ict-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-about-desc {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ict-text-muted);
+  margin: 0 0 28px 0;
+}
+
+/* Qualifications List */
+.ict-edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ict-edu-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--ict-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 15px 18px;
+  border-radius: 14px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ict-edu-card:hover {
+  transform: translateX(6px);
+  border-color: var(--ict-gold);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.08);
+}
+
+.ict-edu-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(249, 115, 22, 0.15));
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ict-gold);
+  font-size: 20px;
+}
+
+.ict-edu-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ict-white);
+}
+
+.ict-edu-info p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ict-text-muted);
+}
+
+/* Scroll Reveal Animation */
+.ict-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.ict-reveal.ict-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 860px) {
+  .ict-about-section {
+    padding: 60px 16px;
+  }
+
+  .ict-about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .ict-image-frame {
+    max-width: 320px;
+  }
+
+  .ict-floating-badge {
+    right: 10px;
+    bottom: -15px;
+    padding: 10px 14px;
+  }
+
+  .ict-about-heading {
+    font-size: 28px;
+  }
+}
+
+
+/*time table*/
+.ict-tt-section {
+  --tt-bg: #0a0b10;
+  --tt-surface: #131620;
+  --tt-surface-elev: #191d2b;
+  --tt-gold: #fbbf24;
+  --tt-orange: #f97316;
+  --tt-white: #ffffff;
+  --tt-muted: #cbd5e1;
+  --tt-border: rgba(251, 191, 36, 0.22);
+
+  background-color: var(--tt-bg);
+  color: var(--tt-white);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-tt-section *,
+.ict-tt-section *::before,
+.ict-tt-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-tt-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.ict-tt-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 38px auto;
+}
+
+.ict-tt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid var(--tt-border);
+  color: var(--tt-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ict-tt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tt-orange);
+  box-shadow: 0 0 8px var(--tt-orange);
+}
+
+.ict-tt-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+  color: var(--tt-white);
+}
+
+.ict-tt-title span {
+  background: linear-gradient(90deg, var(--tt-gold), var(--tt-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-tt-subtitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--tt-muted);
+}
+
+/* Institute Tabs */
+.ict-tt-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.ict-tt-tab {
+  background: var(--tt-surface);
+  color: var(--tt-muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.ict-tt-tab i {
+  color: var(--tt-gold);
+}
+
+.ict-tt-tab:hover {
+  border-color: var(--tt-border);
+  color: var(--tt-white);
+  transform: translateY(-2px);
+}
+
+.ict-tt-tab.is-active {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(249, 115, 22, 0.18));
+  border-color: var(--tt-gold);
+  color: var(--tt-white);
+  box-shadow: 0 10px 24px rgba(251, 191, 36, 0.12);
+}
+
+.ict-tt-tab.is-active i {
+  color: var(--tt-orange);
+}
+
+/* Panels */
+.ict-tt-panel {
+  display: none;
+  animation: ictFadeSlide 0.35s ease;
+}
+
+.ict-tt-panel.is-active {
+  display: block;
+}
+
+@keyframes ictFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ict-tt-inst-banner {
+  background: var(--tt-surface);
+  border: 1px solid var(--tt-border);
+  border-left: 4px solid var(--tt-orange);
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ict-tt-inst-banner h3 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--tt-white);
+}
+
+.ict-tt-inst-banner p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--tt-muted);
+}
+
+.ict-tt-count {
+  background: rgba(251, 191, 36, 0.14);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--tt-gold);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Cards Grid */
+.ict-tt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ict-tt-card {
+  background: var(--tt-surface);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ict-tt-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--tt-gold);
+  background: var(--tt-surface-elev);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+.ict-tt-grade {
+  min-width: 74px;
+  height: 74px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--tt-gold), var(--tt-orange));
+  color: #0a0b10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.28);
+}
+
+.ict-tt-grade span {
+  font-size: 11px;
+  font-weight: 800;
+  margin-top: 3px;
+  letter-spacing: 0.4px;
+}
+
+.ict-tt-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ict-tt-day,
+.ict-tt-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.ict-tt-day {
+  color: var(--tt-white);
+  font-weight: 700;
+}
+
+.ict-tt-time {
+  color: var(--tt-gold);
+  font-weight: 700;
+}
+
+.ict-tt-day i,
+.ict-tt-time i {
+  color: var(--tt-orange);
+  width: 15px;
+  text-align: center;
+}
+
+/* Scroll Reveal */
+.ict-tt-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.ict-tt-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .ict-tt-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ict-tt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .ict-tt-section {
+    padding: 60px 14px;
+  }
+
+  .ict-tt-title {
+    font-size: 28px;
+  }
+
+  .ict-tt-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ict-tt-tab {
+    padding: 11px 10px;
+    font-size: 12.5px;
+    border-radius: 12px;
+  }
+
+  .ict-tt-inst-banner {
+    padding: 15px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ict-tt-inst-banner h3 {
+    font-size: 17px;
+  }
+
+  .ict-tt-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ict-tt-card {
+    padding: 15px;
+  }
+}
+
+
+/*register form*/
+.ict-reg-section {
+  --reg-bg: #0a0b10;
+  --reg-surface: #131620;
+  --reg-input-bg: #0e1017;
+  --reg-gold: #fbbf24;
+  --reg-orange: #f97316;
+  --reg-white: #ffffff;
+  --reg-muted: #cbd5e1;
+  --reg-border: rgba(251, 191, 36, 0.22);
+
+  background-color: var(--reg-bg);
+  color: var(--reg-white);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-reg-section *,
+.ict-reg-section *::before,
+.ict-reg-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-reg-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ict-reg-card {
+  background: var(--reg-surface);
+  border: 1px solid var(--reg-border);
+  border-radius: 22px;
+  padding: 40px 36px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+
+.ict-reg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--reg-gold), var(--reg-orange), transparent);
+  border-radius: 999px;
+}
+
+/* Header */
+.ict-reg-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ict-reg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid var(--reg-border);
+  color: var(--reg-gold);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ict-reg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--reg-orange);
+  box-shadow: 0 0 8px var(--reg-orange);
+}
+
+.ict-reg-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+  color: var(--reg-white);
+}
+
+.ict-reg-title span {
+  background: linear-gradient(90deg, var(--reg-gold), var(--reg-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-reg-subtitle {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--reg-muted);
+}
+
+/* Form Elements */
+.ict-reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ict-reg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ict-reg-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ict-reg-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--reg-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ict-reg-label i {
+  color: var(--reg-gold);
+  font-size: 13px;
+}
+
+.ict-reg-label span {
+  color: var(--reg-orange);
+}
+
+.ict-reg-input,
+.ict-reg-select {
+  width: 100%;
+  background-color: var(--reg-input-bg);
+  color: var(--reg-white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ict-reg-input::placeholder {
+  color: #64748b;
+}
+
+.ict-reg-input:focus,
+.ict-reg-select:focus {
+  border-color: var(--reg-gold);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.14);
+}
+
+/* Select Dropdown Wrapper */
+.ict-reg-select-wrap {
+  position: relative;
+}
+
+.ict-reg-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.ict-reg-select option {
+  background-color: #131620;
+  color: #ffffff;
+}
+
+.ict-reg-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--reg-gold);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Error Message */
+.ict-reg-error {
+  display: none;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 11px 14px;
+  border-radius: 10px;
+}
+
+.ict-reg-error.is-visible {
+  display: block;
+}
+
+/* Submit Button */
+.ict-reg-submit {
+  margin-top: 6px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 22px;
+  background: linear-gradient(135deg, var(--reg-gold), var(--reg-orange));
+  color: #0a0b10;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 12px 26px rgba(249, 115, 22, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.ict-reg-submit i {
+  font-size: 20px;
+}
+
+.ict-reg-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 32px rgba(249, 115, 22, 0.42);
+}
+
+.ict-reg-submit:active {
+  transform: translateY(0);
+}
+
+.ict-reg-note {
+  margin: 4px 0 0 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.ict-reg-note i {
+  color: var(--reg-gold);
+  margin-right: 4px;
+}
+
+/* Scroll Reveal */
+.ict-reg-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.ict-reg-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .ict-reg-section {
+    padding: 60px 14px;
+  }
+
+  .ict-reg-card {
+    padding: 28px 18px;
+    border-radius: 18px;
+  }
+
+  .ict-reg-title {
+    font-size: 25px;
+  }
+
+  .ict-reg-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ict-reg-submit {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+}
+
+
+  /*coment*/
+  .ict-rev-section {
+  --rev-bg: #ffffff;
+  --rev-surface: #f8fafc;
+  --rev-frame-bg: #f1f5f9;
+  --rev-dark: #0f172a;
+  --rev-muted: #475569;
+  --rev-gold: #f59e0b;
+  --rev-orange: #ea580c;
+  --rev-border: #e2e8f0;
+
+  background-color: var(--rev-bg);
+  color: var(--rev-dark);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-rev-section *,
+.ict-rev-section *::before,
+.ict-rev-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-rev-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.ict-rev-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 42px auto;
+}
+
+.ict-rev-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ict-rev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rev-orange);
+}
+
+.ict-rev-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+  color: var(--rev-dark);
+}
+
+.ict-rev-title span {
+  background: linear-gradient(90deg, var(--rev-gold), var(--rev-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-rev-subtitle {
+  margin: 0;
+  font-size: 15px;
+  color: var(--rev-muted);
+}
+
+/* Carousel Layout */
+.ict-rev-carousel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ict-rev-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 4px 18px 4px;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rev-gold) #e2e8f0;
+}
+
+.ict-rev-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.ict-rev-track::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.ict-rev-track::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--rev-gold), var(--rev-orange));
+  border-radius: 999px;
+}
+
+/* PC View: Exactly 3 Cards Visible */
+.ict-rev-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  scroll-snap-align: start;
+  background: var(--rev-surface);
+  border: 1px solid var(--rev-border);
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.ict-rev-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rev-gold);
+  box-shadow: 0 16px 32px rgba(245, 158, 11, 0.14);
+}
+
+/* Uniform Container: No Cropping, No Repeating */
+.ict-rev-img-box {
+  width: 100%;
+  height: 400px; /* සියලුම photos වලට එකම උස */
+  background-color: var(--rev-frame-bg);
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 8px;
+}
+
+.ict-rev-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* කිසිම තැනක් කැපෙන්නේ නැතුව සම්පූර්ණ photo එකම පෙන්වයි */
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ict-rev-zoom-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.78);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ict-rev-card:hover .ict-rev-zoom-hint {
+  opacity: 1;
+}
+
+/* Navigation Arrows */
+.ict-rev-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--rev-border);
+  background: #ffffff;
+  color: var(--rev-dark);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
+  transition: all 0.2s ease;
+}
+
+.ict-rev-nav:hover {
+  background: linear-gradient(135deg, var(--rev-gold), var(--rev-orange));
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.ict-rev-prev {
+  left: -18px;
+}
+
+.ict-rev-next {
+  right: -18px;
+}
+
+.ict-rev-swipe-hint {
+  display: none;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rev-muted);
+}
+
+.ict-rev-swipe-hint i {
+  color: var(--rev-orange);
+  margin-right: 5px;
+}
+
+/* Fullscreen Lightbox Modal */
+.ict-rev-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 11, 16, 0.92);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ict-rev-modal.is-open {
+  display: flex;
+}
+
+.ict-rev-modal img {
+  max-width: 94%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.ict-rev-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll Reveal */
+.ict-rev-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.ict-rev-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet View: 2 Cards */
+@media (max-width: 960px) {
+  .ict-rev-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+/* Mobile View: Exactly 1 Card Visible */
+@media (max-width: 640px) {
+  .ict-rev-section {
+    padding: 60px 14px;
+  }
+
+  .ict-rev-title {
+    font-size: 27px;
+  }
+
+  .ict-rev-card {
+    flex: 0 0 100%; /* Mobile එකේදී 1 Card එකක් සම්පූර්ණයෙන් පේනවා */
+  }
+
+  .ict-rev-img-box {
+    height: 360px;
+  }
+
+  .ict-rev-prev {
+    left: 6px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .ict-rev-next {
+    right: 6px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .ict-rev-swipe-hint {
+    display: block;
+  }
+}
+
+
+/*fooetr*/
+.ict-ftr-section {
+  --ftr-bg: #07080c;
+  --ftr-surface: #131620;
+  --ftr-gold: #fbbf24;
+  --ftr-orange: #f97316;
+  --ftr-white: #ffffff;
+  --ftr-muted: #cbd5e1;
+  --ftr-subtle: #94a3b8;
+  --ftr-border: rgba(251, 191, 36, 0.2);
+
+  background-color: var(--ftr-bg);
+  color: var(--ftr-white);
+  padding: 56px 20px 32px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  border-top: 1px solid var(--ftr-border);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-ftr-section *,
+.ict-ftr-section *::before,
+.ict-ftr-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-ftr-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Top Section */
+.ict-ftr-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.ict-ftr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid var(--ftr-border);
+  color: var(--ftr-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.ict-ftr-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ftr-orange);
+  box-shadow: 0 0 8px var(--ftr-orange);
+}
+
+.ict-ftr-name {
+  margin: 0 0 6px 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ftr-white);
+}
+
+.ict-ftr-name span {
+  background: linear-gradient(90deg, var(--ftr-gold), var(--ftr-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-ftr-tagline {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ftr-muted);
+  line-height: 1.5;
+}
+
+/* Circular Social Icons */
+.ict-ftr-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ict-ftr-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--ftr-surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--ftr-gold);
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ict-ftr-circle:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, var(--ftr-gold), var(--ftr-orange));
+  color: #07080c;
+  border-color: transparent;
+  box-shadow: 0 10px 22px rgba(249, 115, 22, 0.35);
+}
+
+/* Divider */
+.ict-ftr-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.25), rgba(249, 115, 22, 0.25), transparent);
+  margin: 34px 0 24px 0;
+}
+
+/* Bottom Section */
+.ict-ftr-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ict-ftr-copy {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ftr-subtle);
+}
+
+.ict-ftr-credit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ftr-subtle);
+}
+
+.ict-ftr-dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--ftr-white);
+  background: var(--ftr-surface);
+  border: 1px solid var(--ftr-border);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ict-ftr-dev-link i {
+  color: var(--ftr-orange);
+  font-size: 12px;
+}
+
+.ict-ftr-dev-link strong {
+  color: var(--ftr-gold);
+  font-weight: 800;
+}
+
+.ict-ftr-dev-link span {
+  color: var(--ftr-muted);
+  font-weight: 600;
+}
+
+.ict-ftr-dev-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--ftr-gold);
+  box-shadow: 0 8px 18px rgba(251, 191, 36, 0.14);
+}
+
+/* Scroll Reveal */
+.ict-ftr-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.ict-ftr-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 720px) {
+  .ict-ftr-section {
+    padding: 46px 16px 28px 16px;
+  }
+
+  .ict-ftr-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 22px;
+  }
+
+  .ict-ftr-name {
+    font-size: 21px;
+  }
+
+  .ict-ftr-circle {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .ict-ftr-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .ict-ftr-credit {
+    justify-content: center;
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    
+    <!-- 4 Background Images Slider -->
+    <div class="bg-slider">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Text එක ලස්සනට පේන්න දාන Dark Overlay එක -->
+    <div class="overlay"></div>
+
+    <!-- එක තැන තියෙන Text සහ Buttons ටික -->
+    <div class="hero-content">
+      
+      <div class="brand">
+        <img src="t1.jpg" alt="Logo" class="logo" data-aos="fade-up" data-aos-duration="1300">
+        <span class="brand-name" data-aos="fade-up" data-aos-duration="1300">ICT — 2K27</span>
+      </div>
+
+      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="orange-text" >ICT</span>CLASS
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-duration="1800">
+        තරිදු දිවන්ජන සමග අ.පො.ස. (සා.පෙළ) ICT — වසර ගනනක අත්දැකීම් සහිතව ගොඩනැගුනු පන්තිය.
+      </p>
+
+      <div class="btn-group">
+        <a href="#register-form" class="btn btn-primary" data-aos="fade-up" data-aos-duration="2100"> Class එකට රෙජිස්ටර් වෙන්න</a>
+        <a href="#contact1" class="btn btn-outline" data-aos="fade-up" data-aos-duration="2300">WhatsApp හරහා අසන්න</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Font Awesome Icons (ඔයාගේ site එකේ දැනටමත් නැත්නම් විතරක් මේ link එක <head> එකට දාන්න) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<section id="about" class="ict-about-section">
+  <div class="ict-about-container">
+    
+    <!-- Left Side: Teacher's Photo -->
+    <div class="ict-about-image-col ict-reveal">
+      <div class="ict-image-frame">
+        <div class="ict-glow-backdrop"></div>
+        <!-- සර්ගේ photo එකේ link එක මෙතනට දාන්න -->
+        <img src="about.jpg" alt="ICT Lecturer" class="ict-teacher-photo">
+        
+        <div class="ict-floating-badge">
+          <i class="fas fa-laptop-code"></i>
+          <div class="scroll-anim fade-up">
+            <span class="ict-badge-title">ICT Specialist</span>
+            <span class="ict-badge-sub">Modern Tech Education</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Details & Qualifications -->
+    <div class="ict-about-content-col ict-reveal">
+      <div class="ict-section-tag scroll-anim fade-up">
+        <span class="ict-tag-dot"></span> ABOUT THE LECTURER
+      </div>
+      
+      <!-- සර්ගේ නම මෙතන වෙනස් කරගන්න -->
+      <h2 class="ict-about-heading scroll-anim fade-up">
+        තාක්ෂණික ලෝකය ජයගන්න <br>
+        <span>නිවැරදිම මඟපෙන්වීම</span>
+      </h2>
+      
+      <p class="ict-about-desc scroll-anim fade-up">
+        සංකීර්ණ ICT විෂය කරුණු ඉතා සරලව, ප්‍රායෝගිකව සහ විභාග ඉලක්කගතව සිසුන්ගේ මනසට කාවද්දන නවීන ඉගැන්වීම් රටාවක් සමඟින්, සිසුන්ගේ විශිෂ්ට ප්‍රතිඵල වෙනුවෙන් කැපවූ ගුරුවරයෙකි.
+      </p>
+
+      <!-- Educational Qualifications Cards -->
+      <div class="ict-edu-list">
+        
+        <div class="ict-edu-card scroll-anim fade-up">
+          <div class="ict-edu-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="ict-edu-info">
+            <h4>Wayamba University of Sri Lanka</h4>
+            
+          </div>
+        </div>
+
+        <div class="ict-edu-card scroll-anim fade-up">
+          <div class="ict-edu-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="ict-edu-info">
+            <h4>SCTI Campus</h4>
+            <p>උසස් තාක්ෂණික අධ්‍යාපනය</p>
+          </div>
+        </div>
+
+        <div class="ict-edu-card scroll-anim fade-up">
+          <div class="ict-edu-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <div class="ict-edu-info">
+            <h4>College of Technology - Kurunegala</h4>
+           
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+ 
+
+<section id="timetable" class="ict-tt-section">
+  <div class="ict-tt-container">
+
+    <!-- Section Header -->
+    <div class="ict-tt-header ict-tt-reveal">
+      <!-- <div class="ict-tt-badge">
+        <span class="ict-tt-dot"></span> ICT 2K27 • නව පන්ති ආරම්භය
+      </div> -->
+      <h2 class="ict-tt-title scroll-anim fade-up">
+        පන්ති කාලසටහන <span>(Timetable)</span>
+      </h2>
+      <p class="ict-tt-subtitle scroll-anim fade-up">
+        දෙසැම්බර් මුල සිට ආරම්භ වේ — ඔබගේ ආයතනය තෝරා ශ්‍රේණියේ වේලාවන් බලන්න
+      </p>
+    </div>
+
+    <!-- Institute Filter Tabs -->
+    <div class="ict-tt-tabs ict-tt-reveal scroll-anim fade-up" role="tablist" aria-label="Institutes">
+      <button type="button" class="ict-tt-tab is-active" data-inst="gurukula">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>ගුරුකුල | නාරම්මල</span>
+      </button>
+
+      <button type="button" class="ict-tt-tab" data-inst="vishwadeepa">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>විශ්වදීප | නක්කාවත්ත</span>
+      </button>
+
+      <button type="button" class="ict-tt-tab" data-inst="pahasara">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>පැහැසර - ඩොරිගොඩ</span>
+      </button>
+
+      <button type="button" class="ict-tt-tab" data-inst="sakyaya">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>සක්යා - ගිරිඋල්ල</span>
+      </button>
+    </div>
+
+    <!-- 1. ගුරුකුල | නාරම්මල -->
+    <div class="ict-tt-panel is-active" id="inst-gurukula">
+      <div class="ict-tt-inst-banner">
+        <div>
+          <h3>ගුරුකුල | නාරම්මල</h3>
+          <p>ICT 2K27 නව පන්ති • දෙසැම්බර් මුල සිට ආරම්භ වේ</p>
+        </div>
+        <span class="ict-tt-count">06 Classes</span>
+      </div>
+
+      <div class="ict-tt-grid">
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">06 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සෙනසුරාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 03.00 - 05.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">07 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සෙනසුරාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 01.00 - 03.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">08 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> අඟහරුවාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 03.00 - 05.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">09 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සෙනසුරාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 05.00 - 07.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">10 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> ඉරිදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 01.00 - 03.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">11 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> ඉරිදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 03.00 - 05.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. විශ්වදීප | නක්කාවත්ත -->
+    <div class="ict-tt-panel" id="inst-vishwadeepa">
+      <div class="ict-tt-inst-banner">
+        <div>
+          <h3>විශ්වදීප | නක්කාවත්ත</h3>
+          <p>ICT 2K27 නව පන්ති • දෙසැම්බර් මුල සිට ආරම්භ වේ</p>
+        </div>
+        <span class="ict-tt-count">06 Classes</span>
+      </div>
+
+      <div class="ict-tt-grid">
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">06 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> බදාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 03.00 - 05.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">07 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සෙනසුරාදා පෙ.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 10.15 - 12.15</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">08 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> බ්‍රහස්පතින්දා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 05.30 - 07.30</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">09 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> අඟහරුවාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 05.30 - 07.30</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">10 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> අඟහරුවාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 07.30 - 09.30</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">11 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සෙනසුරාදා ප.ව.</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 08.00 - 10.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. පැහැසර - ඩොරිගොඩ -->
+    <div class="ict-tt-panel" id="inst-pahasara">
+      <div class="ict-tt-inst-banner">
+        <div>
+          <h3>පැහැසර - ඩොරිගොඩ</h3>
+          <p>ICT 2K27 නව පන්ති • දෙසැම්බර් මුල සිට ආරම්භ වේ</p>
+        </div>
+        <span class="ict-tt-count">04 Classes</span>
+      </div>
+
+      <div class="ict-tt-grid">
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">06 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> බදාදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 5.00 - 7.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">07 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සිකුරාදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 3.00 - 5.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">08 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සිකුරාදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 5.00 - 6.45</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">11 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සිකුරාදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 7.00 - 9.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. සක් යා - ගිරිඋල්ල -->
+    <div class="ict-tt-panel" id="inst-sakyaya">
+      <div class="ict-tt-inst-banner">
+        <div>
+          <h3>සක්යා - ගිරිඋල්ල</h3>
+          <p>ICT 2K27 නව පන්ති • දෙසැම්බර් මුල සිට ආරම්භ වේ</p>
+        </div>
+        <span class="ict-tt-count">03 Classes</span>
+      </div>
+
+      <div class="ict-tt-grid">
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">09 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> බ්‍රහස්පතින්දා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 3.00 - 5.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">10 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සඳුදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 3.00 - 5.00</div>
+          </div>
+        </div>
+
+        <div class="ict-tt-card">
+          <div class="ict-tt-grade">11 <span>ශ්‍රේණිය</span></div>
+          <div class="ict-tt-meta">
+            <div class="ict-tt-day"><i class="far fa-calendar-alt"></i> සඳුදා</div>
+            <div class="ict-tt-time"><i class="far fa-clock"></i> 5.00 - 7.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Memories Gallery Section -->
+<section class="memories-section">
+  <div class="memories-container">
+    
+    <span class="sub-tag">අපේ මතකයන්</span>
+    <h2 class="section-title">සිසුන් සමඟ සුන්දර මතක සටහන්</h2>
+
+    <div class="gallery-grid">
+      
+      <!-- Photo 1 (Main Featured Photo) -->
+      <div class="gallery-item item-large scroll-anim fade-up">
+        <img src="3.jpg" alt="Students Memory 1">
+        <div class="gallery-overlay">
+          <!-- <span>A/L පන්ති අත්දැකීම් සහ උගන්වන අවස්ථා</span> -->
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="100">
+        <img src="4.jpg" alt="Students Memory 2">
+        <div class="gallery-overlay">
+          <!-- <span>සෙමිනා වැඩසටහන්</span> -->
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="200">
+        <img src="1.jpg" alt="Students Memory 3">
+        <div class="gallery-overlay">
+          <!-- <span>පුනරීක්ෂණ පන්ති (Revision Class)</span> -->
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="300">
+        <img src="2.jpg" alt="Students Memory 4">
+        <div class="gallery-overlay">
+          <!-- <span>සිසුන් සමග සුන්දර මතකයන්</span> -->
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="400">
+        <img src="5.jpg" alt="Students Memory 5">
+        <div class="gallery-overlay">
+          <!-- <span>සිසුන් සමග සුන්දර මතකයන්</span> -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Registration Section -->
+<section id="register" class="ict-reg-section">
+  <div class="ict-reg-container" id="register-form">
+    
+    <div class="ict-reg-card ict-reg-reveal">
+      <!-- Header -->
+      <div class="ict-reg-header">
+        <!-- <div class="ict-reg-badge">
+          <span class="ict-reg-dot"></span> ICT 2K27 ONLINE REGISTRATION
+        </div> -->
+        <h2 class="ict-reg-title">
+          නව පන්ති සඳහා <span>ලියාපදිංචි වන්න</span>
+        </h2>
+        <p class="ict-reg-subtitle">
+          පහත විස්තර නිවැරදිව පුරවා WhatsApp හරහා යොමු කරන්න.
+        </p>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="ictRegForm" class="ict-reg-form" novalidate>
+        
+        <!-- Student Name -->
+        <div class="ict-reg-group">
+          <label for="ictStudentName" class="ict-reg-label">
+            <i class="fas fa-user"></i> ළමයාගේ නම (Student Name) <span>*</span>
+          </label>
+          <input 
+            type="text" 
+            id="ictStudentName" 
+            class="ict-reg-input" 
+            placeholder="උදා: කසුන් චාමර " 
+            required
+          >
+        </div>
+
+        <!-- School -->
+        <div class="ict-reg-group">
+          <label for="ictStudentSchool" class="ict-reg-label">
+            <i class="fas fa-school"></i> පාසල (School) <span>*</span>
+          </label>
+          <input 
+            type="text" 
+            id="ictStudentSchool" 
+            class="ict-reg-input" 
+            placeholder="උදා: මලියදේව විද්‍යාලය " 
+            required
+          >
+        </div>
+
+        <!-- Grade & Institute Two Column Row -->
+        <div class="ict-reg-row">
+          
+          <!-- Grade -->
+          <div class="ict-reg-group">
+            <label for="ictStudentGrade" class="ict-reg-label">
+              <i class="fas fa-layer-group"></i> පන්තිය (Grade) <span>*</span>
+            </label>
+            <div class="ict-reg-select-wrap">
+              <select id="ictStudentGrade" class="ict-reg-select" required>
+                <option value="" disabled selected>ශ්‍රේණිය තෝරන්න...</option>
+                <option value="06 ශ්‍රේණිය">06 ශ්‍රේණිය (Grade 06)</option>
+                <option value="07 ශ්‍රේණිය">07 ශ්‍රේණිය (Grade 07)</option>
+                <option value="08 ශ්‍රේණිය">08 ශ්‍රේණිය (Grade 08)</option>
+                <option value="09 ශ්‍රේණිය">09 ශ්‍රේණිය (Grade 09)</option>
+                <option value="10 ශ්‍රේණිය">10 ශ්‍රේණිය (Grade 10)</option>
+                <option value="11 ශ්‍රේණිය">11 ශ්‍රේණිය (Grade 11)</option>
+              </select>
+              <i class="fas fa-chevron-down ict-reg-arrow"></i>
+            </div>
+          </div>
+
+          <!-- Institute -->
+          <div class="ict-reg-group">
+            <label for="ictStudentInstitute" class="ict-reg-label">
+              <i class="fas fa-map-marker-alt"></i> පැමිණිය හැකි ආයතනය <span>*</span>
+            </label>
+            <div class="ict-reg-select-wrap">
+              <select id="ictStudentInstitute" class="ict-reg-select" required>
+                <option value="" disabled selected>ආයතනය තෝරන්න...</option>
+                <option value="ගුරුකුල | නාරම්මල">ගුරුකුල | නාරම්මල</option>
+                <option value="විශ්වදීප | නක්කාවත්ත">විශ්වදීප | නක්කාවත්ත</option>
+                <option value="පැහැසර - ඩොරිගොඩ">පැහැසර - ඩොරිගොඩ</option>
+                <option value="සක් යා - ගිරිඋල්ල">සක් යා - ගිරිඋල්ල</option>
+              </select>
+              <i class="fas fa-chevron-down ict-reg-arrow"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Error Message Box -->
+        <div id="ictRegError" class="ict-reg-error" role="alert"></div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="ict-reg-submit">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp හරහා ලියාපදිංචි වන්න</span>
+        </button>
+
+        <p class="ict-reg-note">
+          <i class="fas fa-shield-alt"></i> ඔබගේ තොරතුරු කෙලින්ම තරිඳු දිවාංජන සර්ගේ නිල WhatsApp අංකයට (072 133 3739) යොමු වේ.
+        </p>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<section id="reviews" class="ict-rev-section">
+  <div class="ict-rev-container">
+
+    <!-- Header -->
+    <div class="ict-rev-header ict-rev-reveal">
+      
+      <h2 class="ict-rev-title">
+        සිසුන්ගේ <span>අදහස් හා ප්‍රතිචාර</span>
+      </h2>
+      <p class="ict-rev-subtitle">
+        පන්තිය පිළිබඳව සිසුන් එවූ අදහස් (Scroll කර හෝ ඊතල මත click කර සියල්ල බලන්න)
+      </p>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div class="ict-rev-carousel-wrap ict-rev-reveal">
+      
+      <!-- Left Arrow -->
+      <button type="button" class="ict-rev-nav ict-rev-prev" aria-label="Previous">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Scrollable Track -->
+      <div class="ict-rev-track" id="ictRevTrack">
+        
+        <!-- Comment Screenshot 1 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 1වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c1.jpg" alt="Student Comment 1" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+        <!-- Comment Screenshot 2 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 2වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c2.jpg" alt="Student Comment 2" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+        <!-- Comment Screenshot 3 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 3වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c3.jpg" alt="Student Comment 3" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+        <!-- Comment Screenshot 4 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 4වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c4.jpg" alt="Student Comment 4" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+        <!-- Comment Screenshot 5 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 5වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c5.jpg" alt="Student Comment 5" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+        <!-- Comment Screenshot 6 -->
+        <div class="ict-rev-card">
+          <div class="ict-rev-img-box">
+            <!-- ඔයාගේ 4වෙනි screenshot එකේ path එක මෙතනට දාන්න -->
+            <img src="c6.jpg" alt="Student Comment 4" loading="lazy">
+            <span class="ict-rev-zoom-hint"><i class="fas fa-search-plus"></i></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Arrow -->
+      <button type="button" class="ict-rev-nav ict-rev-next" aria-label="Next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Swipe Hint -->
+    <div class="ict-rev-swipe-hint">
+      <i class="fas fa-arrows-alt-h"></i> හරහට scroll කර තවත් අදහස් බලන්න
+    </div>
+
+  </div>
+
+  <!-- Fullscreen Zoom Modal (Photo click කළාම ලොකුවට පේන්න) -->
+  <div id="ictRevModal" class="ict-rev-modal" aria-hidden="true">
+    <button type="button" id="ictRevClose" class="ict-rev-modal-close" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <img id="ictRevModalImg" src="" alt="Full View Comment">
+  </div>
+</section>
+
+
+
+<!-- Teacher Profile / About Section -->
+<section class="teacher-profile-section">
+  <div class="teacher-profile-container">
+    
+    <!-- Gold Bordered Photo Box -->
+    <div class="teacher-img-wrapper scroll-anim zoom-in">
+      <img src="t3.jpg" alt="Teacher Photo" class="teacher-img">
+    </div>
+
+    <!-- Teacher Bio / Details Side -->
+    <div class="teacher-details scroll-anim fade-up" data-delay="200">
+      <span class="sub-tag">ගුරු පියාණන්</span>
+      <h2 class="teacher-name">තරිඳු දිවාංජන</h2>
+      <p class="teacher-bio">
+        පුරා වසර ගනණකට  වැඩි අත්දැකීම් සහිතව, දිවයින පුරා දහස් සංඛ්‍යාත සිසුන්ගේ O/L ICT  ප්‍රතිඵල විශිෂ්ටත්වයට මග පෙන්වූ ගුරු පියාණන්.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- සම්බන්ධ කරගැනීමේ කොටස (Contact Section) -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-box" id="contact1">
+            <h2 class="section-title">ගුරුතුමා සම්බන්ධ කරගන්න</h2>
+            <p class="contact-description">පන්ති පිළිබඳ වැඩිදුර විස්තර දැනගැනීමට පහත දුරකථන අංකයට අමතන්න හෝ WhatsApp හරහා පණිවිඩයක් එවන්න.</p>
+
+            <!-- සාමාන්‍ය විස්තර -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p style="font-size: 15px;"><strong>දුරකථන:</strong> 072 133 3739</p>
+                </div>
+              
+            </div>
+
+            <!-- WhatsApp බොත්තම -->
+            <div class="whatsapp-container">
+                <!-- 947XXXXXXXX වෙනුවට ඔයාගේ නම්බර් එක දාන්න (බිංදුව නැතුව 94 න් පටන්ගන්න) -->
+                <a href="https://wa.me/94721333739" target="_blank" class="whatsapp-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="wa-icon" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    WhatsApp හරහා සම්බන්ධ වන්න
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer id="footer" class="ict-ftr-section">
+  <div class="ict-ftr-container">
+
+    <!-- Top Row: Brand & Circular Social Icons -->
+    <div class="ict-ftr-top ict-ftr-reveal">
+      <div class="ict-ftr-brand">
+        <div class="ict-ftr-badge">
+          <span class="ict-ftr-dot"></span> ICT 2K27
+        </div>
+        <h3 class="ict-ftr-name">තරිඳු දිවාංජන <span>ICT</span></h3>
+        
+      </div>
+
+      <!-- 3 Circular Social Media Icons -->
+      <div class="ict-ftr-socials" aria-label="Social Media Links">
+        <a 
+          href="https://www.facebook.com/share/1JdJVBupoB/?mibextid=wwXIfr" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="ict-ftr-circle ict-ftr-fb" 
+          aria-label="Facebook"
+          title="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a 
+          href="https://www.tiktok.com/@ictwiththarindu?_r=1&_t=ZS-9BfpYrAInSA" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="ict-ftr-circle ict-ftr-tt" 
+          aria-label="TikTok"
+          title="TikTok"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a 
+          href="https://wa.me/94721333739?text=Hello%20Sir%2C%20I%20would%20like%20to%20know%20more%20about%20ICT%202K27%20classes." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="ict-ftr-circle ict-ftr-wa" 
+          aria-label="WhatsApp"
+          title="WhatsApp - 0721333739"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="ict-ftr-divider"></div>
+
+    <!-- Bottom Row: Copyright & Developer Credit -->
+    <div class="ict-ftr-bottom ict-ftr-reveal">
+      <p class="ict-ftr-copy">
+        © <span id="ictFtrYear">2026</span> ICT Classes. All Rights Reserved.
+      </p>
+
+      <div class="ict-ftr-credit">
+        <span>Designed & Developed by</span>
+        <a href="tel:0781227941" class="ict-ftr-dev-link">
+          <i class="fas fa-code"></i>
+          <strong>Home Artist</strong>
+          <span>• 0781227941</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- AOS JS Library -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    //mula thiyana text animation eka 
+  AOS.init({
+    once: true // Web page එක open වෙද්දි එක පාරක් විතරක් animate වෙන්න
+  });
+
+
+  //result count 
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-number');
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // Count වෙන්න යන මුළු කාලය (Milliseconds - 2 Seconds)
+      const stepTime = 20;
+      const totalSteps = duration / stepTime;
+      const increment = target / totalSteps;
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.innerText = target + "+"; // අගය ඉවර වුණාම අගට + සලකුණ වැටේ
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, stepTime);
+    };
+
+    // User Scroll කරලා Section එකට ආවම විතරක් Count වෙන්න හදපු Observer එක
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          observer.unobserve(entry.target); // එක පාරක් වැඩ කළ පසු නතර වේ
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+
+//text animation 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedTexts = document.querySelectorAll('.scroll-anim');
+
+    const textObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, delay);
+
+          textObserver.unobserve(entry.target); // එක පාරක් animate වූ පසු නතර වේ
+        }
+      });
+    }, {
+      threshold: 0.15 // Text එකෙන් 15%ක් Screen එකට ආ පසු Animation එක පටන් ගනී
+    });
+
+    animatedTexts.forEach(text => textObserver.observe(text));
+  });
+
+
+
+//payment box
+    // Payment Details Modal එක Open කරන Function එක
+function openPaymentModal() {
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+// Modal එක Close කරන Function එක
+function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+// Modal එකෙන් එලිය ක්ලික් කල විටත් auto close වන කෝඩ් එක
+window.onclick = function(event) {
+    var modal = document.getElementById("paymentModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//about
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(".ict-reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("ict-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach((el) => observer.observe(el));
+});
+
+
+//time table
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".ict-tt-tab");
+  const panels = document.querySelectorAll(".ict-tt-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetId = "inst-" + tab.getAttribute("data-inst");
+
+      tabs.forEach((t) => t.classList.remove("is-active"));
+      panels.forEach((p) => p.classList.remove("is-active"));
+
+      tab.classList.add("is-active");
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add("is-active");
+      }
+    });
+  });
+
+  const reveals = document.querySelectorAll(".ict-tt-reveal");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+});
+
+
+//register form
+document.addEventListener("DOMContentLoaded", () => {
+  const regForm = document.getElementById("ictRegForm");
+  const errorBox = document.getElementById("ictRegError");
+
+  if (regForm) {
+    regForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("ictStudentName").value.trim();
+      const school = document.getElementById("ictStudentSchool").value.trim();
+      const grade = document.getElementById("ictStudentGrade").value;
+      const institute = document.getElementById("ictStudentInstitute").value;
+
+      // Validation
+      if (!name || !school || !grade || !institute) {
+        errorBox.textContent = "කරුණාකර සියලුම විස්තර නිවැරදිව පුරවන්න.";
+        errorBox.classList.add("is-visible");
+        return;
+      }
+
+      errorBox.classList.remove("is-visible");
+
+      // Target WhatsApp Number (0721333739 -> 94721333739)
+      const phoneNumber = "94721333739";
+
+      const message = 
+`*ICT 2K27 - නව පන්ති ලියාපදිංචිය* 
+
+ *ළමයාගේ නම:* ${name}
+ *පාසල:* ${school}
+ *පන්තිය:* ${grade}
+ *පැමිණිය හැකි ආයතනය:* ${institute}
+
+_(වෙබ් අඩවිය හරහා යොමු කරන ලදී)_`;
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  }
+
+  // Scroll Reveal
+  const regReveals = document.querySelectorAll(".ict-reg-reveal");
+  const regObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          regObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  regReveals.forEach((el) => regObserver.observe(el));
+});
+
+
+//coment
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("ictRevTrack");
+  const prevBtn = document.querySelector(".ict-rev-prev");
+  const nextBtn = document.querySelector(".ict-rev-next");
+
+  if (track && prevBtn && nextBtn) {
+    const getScrollStep = () => {
+      const card = track.querySelector(".ict-rev-card");
+      return card ? card.offsetWidth + 20 : 320;
+    };
+
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+    });
+  }
+
+  // Lightbox Zoom on Click
+  const modal = document.getElementById("ictRevModal");
+  const modalImg = document.getElementById("ictRevModalImg");
+  const closeBtn = document.getElementById("ictRevClose");
+  const cards = document.querySelectorAll(".ict-rev-card");
+
+  if (modal && modalImg && closeBtn) {
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img");
+        if (img) {
+          modalImg.src = img.src;
+          modal.classList.add("is-open");
+        }
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modalImg.src = "";
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Scroll Reveal
+  const revReveals = document.querySelectorAll(".ict-rev-reveal");
+  const revObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revReveals.forEach((el) => revObserver.observe(el));
+});
+
+
+//foter
+document.addEventListener("DOMContentLoaded", () => {
+  const yearEl = document.getElementById("ictFtrYear");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  const ftrReveals = document.querySelectorAll(".ict-ftr-reveal");
+  const ftrObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          ftrObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  ftrReveals.forEach((el) => ftrObserver.observe(el));
+});
+
+</script>
+
+</body>
+</html>

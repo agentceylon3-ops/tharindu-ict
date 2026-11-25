@@ -2764,6 +2764,300 @@ html {
   }
 }
 
+/*img*/
+.ict-res-section {
+  --res-bg: #0a0b10;
+  --res-surface: #131620;
+  --res-gold: #fbbf24;
+  --res-orange: #f97316;
+  --res-white: #ffffff;
+  --res-muted: #cbd5e1;
+  --res-border: rgba(251, 191, 36, 0.24);
+
+  background-color: var(--res-bg);
+  color: var(--res-white);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ict-res-section *,
+.ict-res-section *::before,
+.ict-res-section *::after {
+  box-sizing: border-box;
+}
+
+.ict-res-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Header */
+.ict-res-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 44px auto;
+}
+
+.ict-res-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid var(--res-border);
+  color: var(--res-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ict-res-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--res-orange);
+  box-shadow: 0 0 8px var(--res-orange);
+}
+
+.ict-res-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+  color: var(--res-white);
+}
+
+.ict-res-title span {
+  background: linear-gradient(90deg, var(--res-gold), var(--res-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ict-res-subtitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--res-muted);
+}
+
+/* 2-Column Grid for Result Sheets */
+.ict-res-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.ict-res-card {
+  background: var(--res-surface);
+  border: 1px solid var(--res-border);
+  border-radius: 20px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ict-res-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--res-gold);
+  box-shadow: 0 22px 45px rgba(251, 191, 36, 0.14);
+}
+
+.ict-res-img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #0d0f17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ict-res-img-wrap img {
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: contain; /* කිසිම තැනක් කැපෙන්නේ නැතුව සම්පූර්ණ sheet එකම පේනවා */
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.ict-res-card:hover .ict-res-img-wrap img {
+  transform: scale(1.02);
+}
+
+.ict-res-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 11, 16, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ict-res-card:hover .ict-res-overlay {
+  opacity: 1;
+}
+
+.ict-res-zoom-btn {
+  background: linear-gradient(135deg, var(--res-gold), var(--res-orange));
+  color: #0a0b10;
+  font-size: 13.5px;
+  font-weight: 800;
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.ict-res-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 6px 4px 6px;
+}
+
+.ict-res-tag {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--res-white);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ict-res-tag i {
+  color: var(--res-gold);
+}
+
+.ict-res-tap {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--res-orange);
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Lightbox Modal */
+.ict-res-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(7, 8, 12, 0.94);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ict-res-modal.is-open {
+  display: flex;
+}
+
+.ict-res-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 95%;
+  max-height: 92vh;
+}
+
+.ict-res-modal-body img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--res-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+}
+
+.ict-res-modal-caption {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--res-gold);
+  text-align: center;
+}
+
+.ict-res-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--res-border);
+  background: var(--res-surface);
+  color: var(--res-white);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ict-res-modal-close:hover {
+  background: var(--res-orange);
+  color: #0a0b10;
+}
+
+/* Scroll Reveal */
+.ict-res-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.ict-res-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ict-res-section {
+    padding: 60px 14px;
+  }
+
+  .ict-res-title {
+    font-size: 28px;
+  }
+
+  .ict-res-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ict-res-card {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .ict-res-tag {
+    font-size: 13.5px;
+  }
+}
+
+
 
 
 
@@ -3131,6 +3425,75 @@ html {
       </div>
     </div>
 
+  </div>
+</section>
+
+<section id="results" class="ict-res-section">
+  <div class="ict-res-container">
+
+    <!-- Header -->
+    <div class="ict-res-header ict-res-reveal">
+      <div class="ict-res-badge">
+        <span class="ict-res-dot"></span> PROVEN TRACK RECORD
+      </div>
+      <h2 class="ict-res-title">
+        විශිෂ්ට <span>විභාග ප්‍රතිඵල</span>
+      </h2>
+      <p class="ict-res-subtitle">
+        තරිඳු දිවාංජන සර්ගේ ICT පන්ති තුළින් විශිෂ්ට ජයග්‍රහණ ලබාගත් සිසුන්ගේ ප්‍රතිඵල සටහන් (ප්‍රතිඵල සටහන මත click කර විශාල කර බලන්න)
+      </p>
+    </div>
+
+    <!-- 2 Result Sheet Photos Grid -->
+    <div class="ict-res-grid ict-res-reveal">
+      
+      <!-- Result Sheet 1 -->
+      <div class="ict-res-card" data-caption="ICT විභාග ප්‍රතිඵල සටහන - 01">
+        <div class="ict-res-img-wrap">
+          <!-- ඔයාගේ 1වෙනි Result Sheet photo එකේ path එක මෙතනට දාන්න -->
+          <img src="r1.jpg" alt="ICT Result Sheet 1" loading="lazy">
+          <div class="ict-res-overlay">
+            <span class="ict-res-zoom-btn">
+              <i class="fas fa-search-plus"></i> විශාල කර බලන්න
+            </span>
+          </div>
+        </div>
+        <div class="ict-res-card-footer">
+          <span class="ict-res-tag"><i class="fas fa-trophy"></i> 01. විශිෂ්ට ප්‍රතිඵල සටහන</span>
+          <span class="ict-res-tap">Tap to Zoom</span>
+        </div>
+      </div>
+
+      <!-- Result Sheet 2 -->
+      <div class="ict-res-card" data-caption="ICT විභාග ප්‍රතිඵල සටහන - 02">
+        <div class="ict-res-img-wrap">
+          <!-- ඔයාගේ 2වෙනි Result Sheet photo එකේ path එක මෙතනට දාන්න -->
+          <img src="r2.jpg" alt="ICT Result Sheet 2" loading="lazy">
+          <div class="ict-res-overlay">
+            <span class="ict-res-zoom-btn">
+              <i class="fas fa-search-plus"></i> විශාල කර බලන්න
+            </span>
+          </div>
+        </div>
+        <div class="ict-res-card-footer">
+          <span class="ict-res-tag"><i class="fas fa-award"></i> 02. විශිෂ්ට ප්‍රතිඵල සටහන</span>
+          <span class="ict-res-tap">Tap to Zoom</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div id="ictResModal" class="ict-res-modal" aria-hidden="true">
+    <button type="button" id="ictResClose" class="ict-res-modal-close" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="ict-res-modal-body">
+      <img id="ictResModalImg" src="r2.jpg" alt="Full Result Sheet">
+      <p id="ictResModalCaption" class="ict-res-modal-caption"></p>
+    </div>
   </div>
 </section>
 
@@ -3828,6 +4191,55 @@ document.addEventListener("DOMContentLoaded", () => {
   ftrReveals.forEach((el) => ftrObserver.observe(el));
 });
 
+
+//img2
+document.addEventListener("DOMContentLoaded", () => {
+  const resModal = document.getElementById("ictResModal");
+  const resModalImg = document.getElementById("ictResModalImg");
+  const resModalCaption = document.getElementById("ictResModalCaption");
+  const resClose = document.getElementById("ictResClose");
+  const resCards = document.querySelectorAll(".ict-res-card");
+
+  if (resModal && resModalImg && resClose) {
+    resCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img");
+        const caption = card.getAttribute("data-caption") || "";
+        if (img) {
+          resModalImg.src = img.src;
+          if (resModalCaption) resModalCaption.textContent = caption;
+          resModal.classList.add("is-open");
+        }
+      });
+    });
+
+    const closeResModal = () => {
+      resModal.classList.remove("is-open");
+      resModalImg.src = "";
+    };
+
+    resClose.addEventListener("click", closeResModal);
+    resModal.addEventListener("click", (e) => {
+      if (e.target === resModal) closeResModal();
+    });
+  }
+
+  // Scroll Reveal
+  const resReveals = document.querySelectorAll(".ict-res-reveal");
+  const resObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          resObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  resReveals.forEach((el) => resObserver.observe(el));
+});
 </script>
 
 </body>
